@@ -2305,6 +2305,18 @@ class Bitbucket(BitbucketBase):
             params["to"] = hash_newest
         return (self.get(url, params=params) or {}).get("diffs")
 
+    def get_pr_diff(self, project_key, repository_slug, pr_id, path):
+        """
+        Gets a diff of the changes available in PullRequest
+        :param project_key: PROJECT
+        :param repository_slug: my_shiny_repo
+        :param pr_id: 2341
+        :return:
+        """
+        url = "{}/diff/{}".format(self._url_pull_request(project_key, repository_slug, pr_id), path)
+        params = {}
+        return self.get(url, params=params)
+
     def _url_commits(self, project_key, repository_slug, api_root=None, api_version=None):
         return "{}/commits".format(
             self._url_repo(
