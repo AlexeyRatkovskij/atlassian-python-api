@@ -10,7 +10,7 @@ with open("README.rst") as file:
 
 
 setup(
-    name="atlassian-python-api",
+    name="a-ratkovskiy-atlassian-python-api",
     description="Python Atlassian REST API Wrapper",
     long_description=long_description,
     license="Apache License 2.0",
